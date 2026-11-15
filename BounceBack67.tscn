@@ -54,7 +54,7 @@ texture = ExtResource("7_32qau")
 [node name="prepreka" parent="." unique_id=587180388 instance=ExtResource("11_32qau")]
 
 [node name="preprekaTimer" type="Timer" parent="." unique_id=855428599]
-wait_time = 12.424999999999999
+wait_time = 12.425
 autostart = true
 
 [node name="oblak" parent="." unique_id=1448474349 instance=ExtResource("10_32qau")]

@@ -14,6 +14,7 @@ func _ready():
 		body_entered.connect(_on_body_entered)
 	setup_ui()
 	update_count()
+	print("test")
  
 func setup_ui():
 	var parent = get_parent()
