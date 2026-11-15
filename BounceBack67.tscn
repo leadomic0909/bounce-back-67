@@ -14,9 +14,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_dudcw"]
 radius = 186.44629
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cylj"]
-size = Vector2(1542.2642, 630.71704)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_pv2l2"]
 radius = 193.62386
 
@@ -79,11 +76,8 @@ position = Vector2(509, 82)
 scale = Vector2(0.21721312, 0.2172131)
 texture = ExtResource("6_n0txk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oblak" unique_id=940026929]
-position = Vector2(509.00006, 83)
-scale = Vector2(0.21721312, 0.2172131)
-skew = -0.017453292
-shape = SubResource("RectangleShape2D_4cylj")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="oblak" unique_id=987052387]
+polygon = PackedVector2Array(361, 78, 362, 74, 357, 71, 352, 63, 355, 59, 365, 52, 377, 49, 384, 48, 396, 47, 404, 48, 403, 42, 411, 37, 423, 33, 431, 33, 437, 33, 444, 33, 447, 34, 446, 27, 450, 23, 477, 17, 500, 16, 532, 19, 545, 26, 546, 29, 565, 33, 571, 38, 572, 43, 590, 48, 596, 51, 613, 53, 632, 58, 645, 62, 650, 66, 652, 73, 648, 78, 667, 84, 672, 90, 671, 94, 662, 101, 673, 106, 675, 111, 673, 115, 665, 120, 653, 125, 648, 126, 645, 129, 639, 131, 636, 133, 632, 135, 619, 139, 607, 141, 588, 142, 560, 142, 546, 142, 542, 140, 540, 142, 535, 144, 511, 147, 493, 148, 462, 147, 442, 143, 434, 141, 418, 143, 396, 140, 379, 133, 372, 123, 372, 119, 352, 116, 343, 109, 342, 101, 351, 98, 356, 96, 349, 93, 346, 88, 349, 83, 355, 80)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=221863669]
 
