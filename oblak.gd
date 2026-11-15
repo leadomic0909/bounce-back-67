@@ -5,6 +5,8 @@ extends Area2D
 func _process(delta):
 	position.x -= speed*delta
 
+var disappearing = false
+
 func _on_body_entered(body):
 	print("Nešto je dotaknulo oblak")
 		
@@ -12,9 +14,21 @@ func _on_body_entered(body):
 		print("Pozvana je funkcija")
 		body.slow_down()
 	
-	
+	if body.name == "Player" and not disappearing:
+		disappearing = true
+		set_deferred("monitoring", false)
+		
+		body.set_physics_process(false)
+		body.set_process_input(false)
+		
+		var tween = create_tween()
+		tween.tween_property(self, "modulate:a", 0.0, 0.4)
+		
+		await tween.finished
+		
+		body.set_physics_process(true)
+		body.set_process_input(true)
+		
+		queue_free()
 
-
-# Called when the node enters the scene tree for the first time.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+		
