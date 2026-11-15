@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cip6yf2pyuc83"]
 
+[ext_resource type="Script" uid="uid://bvrmuylqvgun2" path="res://bounce_back_67.gd" id="1_551f8"]
 [ext_resource type="Script" uid="uid://cg3oqeg4esjc4" path="res://parallax_background.gd" id="1_b8312"]
 [ext_resource type="Script" uid="uid://n4jjkxjemm" path="res://player.gd" id="1_f6wta"]
 [ext_resource type="Texture2D" uid="uid://bdc17ixgknhe5" path="res://Background1.png" id="1_v84gk"]
@@ -7,10 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cyienowca8bm2" path="res://prepreka.png" id="4_d3vrx"]
 [ext_resource type="Script" uid="uid://dk2ku4vvenyq8" path="res://prepreka_1.gd" id="5_svhgf"]
 [ext_resource type="Texture2D" uid="uid://cex5fq7vonq7c" path="res://67coin.png" id="5_tgtej"]
-[ext_resource type="Texture2D" uid="uid://dgl5dki3idvgq" path="res://oblak1.png" id="6_n0txk"]
 [ext_resource type="Script" uid="uid://cynw0xyho867b" path="res://coin_67,69.gd" id="7_551f8"]
 [ext_resource type="Texture2D" uid="uid://7argp4mn3avj" path="res://evil67.png" id="7_b8312"]
-[ext_resource type="Script" uid="uid://bjxmiqsaii113" path="res://oblak.gd" id="7_svhgf"]
+[ext_resource type="PackedScene" uid="uid://wm2e8vne186c" path="res://oblak.tscn" id="10_32qau"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dudcw"]
 radius = 186.44629
@@ -19,6 +19,8 @@ radius = 186.44629
 radius = 193.62386
 
 [node name="Node2D" type="Node2D" unique_id=1078858180]
+script = ExtResource("1_551f8")
+oblak_scene = ExtResource("10_32qau")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=23149043]
 script = ExtResource("1_b8312")
@@ -70,16 +72,7 @@ position = Vector2(562, 198)
 scale = Vector2(0.16090426, 0.16090426)
 shape = SubResource("CircleShape2D_dudcw")
 
-[node name="oblak" type="Area2D" parent="." unique_id=973554697]
-script = ExtResource("7_svhgf")
-
-[node name="Sprite2D" type="Sprite2D" parent="oblak" unique_id=1412087420]
-position = Vector2(509.00003, 72)
-scale = Vector2(0.21721312, 0.2172131)
-texture = ExtResource("6_n0txk")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="oblak" unique_id=1955471803]
-polygon = PackedVector2Array(528, 19, 471, 18, 452, 30, 420, 44, 392, 54, 375, 69, 371, 92, 383, 104, 407, 109, 427, 118, 486, 123, 543, 120, 578, 115, 615, 111, 633, 106, 647, 98, 646, 78, 628, 61, 573, 42)
+[node name="oblak" parent="." unique_id=1448474349 instance=ExtResource("10_32qau")]
 
 [node name="69" type="Area2D" parent="." unique_id=221863669]
 script = ExtResource("7_551f8")
@@ -100,4 +93,8 @@ shape = SubResource("CircleShape2D_pv2l2")
 offset_right = 72.0
 offset_bottom = 42.0
 
-[connection signal="body_entered" from="oblak" to="oblak" method="_on_body_entered"]
+[node name="OblakTimer" type="Timer" parent="." unique_id=173924474]
+wait_time = 5.275
+autostart = true
+
+[connection signal="timeout" from="OblakTimer" to="." method="_on_oblak_timer_timeout"]

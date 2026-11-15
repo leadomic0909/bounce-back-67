@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://wm2e8vne186c"]
+
+[ext_resource type="Script" uid="uid://bjxmiqsaii113" path="res://oblak.gd" id="1_tcim6"]
+[ext_resource type="Texture2D" uid="uid://dgl5dki3idvgq" path="res://oblak1.png" id="2_mjeat"]
+
+[node name="oblak" type="Area2D" unique_id=1448474349]
+script = ExtResource("1_tcim6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1989168815]
+position = Vector2(509.00003, 72)
+scale = Vector2(0.21721312, 0.2172131)
+texture = ExtResource("2_mjeat")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=235454849]
+polygon = PackedVector2Array(528, 19, 471, 18, 452, 30, 420, 44, 392, 54, 375, 69, 371, 92, 383, 104, 407, 109, 427, 118, 486, 123, 543, 120, 578, 115, 615, 111, 633, 106, 647, 98, 646, 78, 628, 61, 573, 42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
