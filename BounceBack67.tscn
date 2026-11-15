@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dk2ku4vvenyq8" path="res://prepreka_1.gd" id="5_svhgf"]
 [ext_resource type="Texture2D" uid="uid://cex5fq7vonq7c" path="res://67coin.png" id="5_tgtej"]
 [ext_resource type="Texture2D" uid="uid://dgl5dki3idvgq" path="res://oblak1.png" id="6_n0txk"]
+[ext_resource type="Script" uid="uid://cynw0xyho867b" path="res://coin_67,69.gd" id="7_551f8"]
 [ext_resource type="Texture2D" uid="uid://7argp4mn3avj" path="res://evil67.png" id="7_b8312"]
 [ext_resource type="Script" uid="uid://bjxmiqsaii113" path="res://oblak.gd" id="7_svhgf"]
 
@@ -57,6 +58,7 @@ scale = Vector2(0.33599666, 0.33599663)
 polygon = PackedVector2Array(29.762207, 0, -65.47681, -56.548187, 32.738525, -113.096375, -68.453125, -172.62077, 29.762207, -229.16895, -65.47681, -285.71713, 35.7146, -342.26532, 62.500732, -345.24155, 65.47681, 339.28906, 29.762207, 339.28906, -65.47681, 279.7647, 35.7146, 223.21649, -68.453125, 169.64453, 29.762207, 116.07257, -65.47681, 56.548187)
 
 [node name="coin67" type="Area2D" parent="." unique_id=1387061665]
+script = ExtResource("7_551f8")
 
 [node name="coin" type="Sprite2D" parent="coin67" unique_id=26272759]
 position = Vector2(562.00006, 198)
@@ -79,14 +81,15 @@ texture = ExtResource("6_n0txk")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="oblak" unique_id=987052387]
 polygon = PackedVector2Array(361, 78, 362, 74, 357, 71, 352, 63, 355, 59, 365, 52, 377, 49, 384, 48, 396, 47, 404, 48, 403, 42, 411, 37, 423, 33, 431, 33, 437, 33, 444, 33, 447, 34, 446, 27, 450, 23, 477, 17, 500, 16, 532, 19, 545, 26, 546, 29, 565, 33, 571, 38, 572, 43, 590, 48, 596, 51, 613, 53, 632, 58, 645, 62, 650, 66, 652, 73, 648, 78, 667, 84, 672, 90, 671, 94, 662, 101, 673, 106, 675, 111, 673, 115, 665, 120, 653, 125, 648, 126, 645, 129, 639, 131, 636, 133, 632, 135, 619, 139, 607, 141, 588, 142, 560, 142, 546, 142, 542, 140, 540, 142, 535, 144, 511, 147, 493, 148, 462, 147, 442, 143, 434, 141, 418, 143, 396, 140, 379, 133, 372, 123, 372, 119, 352, 116, 343, 109, 342, 101, 351, 98, 356, 96, 349, 93, 346, 88, 349, 83, 355, 80)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=221863669]
+[node name="69" type="Area2D" parent="." unique_id=221863669]
+script = ExtResource("7_551f8")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1581131645]
+[node name="Sprite2D" type="Sprite2D" parent="69" unique_id=1581131645]
 position = Vector2(1030, 295)
 scale = Vector2(0.1501305, 0.15013048)
 texture = ExtResource("7_b8312")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1402542791]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="69" unique_id=1402542791]
 position = Vector2(1030, 295)
 scale = Vector2(0.1501305, 0.15013048)
 shape = SubResource("CircleShape2D_pv2l2")
