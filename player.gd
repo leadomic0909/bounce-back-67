@@ -9,15 +9,15 @@ func slow_down():
 	slow_active = true
 	Engine.time_scale = 0.5
 	
-	await get_tree().create_timer(3.0, true, false, true).timeout
+	await get_tree().create_timer(1.5, true, false, true).timeout
 	
-	Engine.time_scale = 1.0
+	Engine.time_scale = 2.0
 	print("Normalna brzina vraćena")
 	slow_active = false
-	slow_down()
 	
 	
 	
+
 		
 
 
@@ -38,6 +38,6 @@ func _on_body_entered(body):
 	
 	if body.name == "Player":
 		Engine.time_scale = 0.5
-		await get_tree().create_timer(3.0, true, false, true).timeout
-		Engine.time_scale = 1.0
+		await get_tree().create_timer(1.5, true, false, true).timeout
+		Engine.time_scale = 2.0
 	
