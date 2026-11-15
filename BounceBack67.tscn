@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cyienowca8bm2" path="res://prepreka.png" id="4_d3vrx"]
 [ext_resource type="Script" uid="uid://dk2ku4vvenyq8" path="res://prepreka_1.gd" id="5_svhgf"]
 [ext_resource type="Texture2D" uid="uid://cex5fq7vonq7c" path="res://67coin.png" id="5_tgtej"]
+[ext_resource type="Texture2D" uid="uid://cti12jc0ygmyk" path="res://Player-mrtvi.png" id="7_32qau"]
 [ext_resource type="Script" uid="uid://cynw0xyho867b" path="res://coin_67,69.gd" id="7_551f8"]
 [ext_resource type="Texture2D" uid="uid://7argp4mn3avj" path="res://evil67.png" id="7_b8312"]
 [ext_resource type="PackedScene" uid="uid://wm2e8vne186c" path="res://oblak.tscn" id="10_32qau"]
@@ -35,6 +36,7 @@ texture = ExtResource("1_v84gk")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1327916709]
 script = ExtResource("1_f6wta")
+dead_texture = ExtResource("7_32qau")
 
 [node name="srce" type="Sprite2D" parent="Player" unique_id=234430544]
 position = Vector2(192.99997, 276.9875)
@@ -46,7 +48,14 @@ position = Vector2(656.9662, 362.32916)
 scale = Vector2(0.7847532, 0.7361571)
 polygon = PackedVector2Array(-592, -153, -581, -165, -567, -173, -549, -175, -537, -170, -527, -161, -521, -149, -522, -142, -522.4142, -136.28772, -527.51135, -122.70364, -535.15704, -113.194824, -546, -102, -589.95135, -56.141785, -637.0999, -102.327576, -646.01996, -113.194824, -656.21423, -126.77887, -660.0371, -140.36292, -657.4885, -153.94699, -651.11707, -163.45581, -641, -170, -629, -174, -617, -173, -605, -168, -598, -162)
 
+[node name="mrtvo srce" type="Sprite2D" parent="Player" unique_id=371296221]
+visible = false
+position = Vector2(193, 276.987)
+scale = Vector2(0.274, 0.256)
+texture = ExtResource("7_32qau")
+
 [node name="prepreka1" type="Area2D" parent="." unique_id=1961751143]
+z_index = 2
 script = ExtResource("5_svhgf")
 
 [node name="prepreka1" type="Sprite2D" parent="prepreka1" unique_id=2122072781]
@@ -97,4 +106,5 @@ offset_bottom = 42.0
 wait_time = 5.275
 autostart = true
 
+[connection signal="body_entered" from="prepreka1" to="prepreka1" method="_on_body_entered"]
 [connection signal="timeout" from="OblakTimer" to="." method="_on_oblak_timer_timeout"]

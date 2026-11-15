@@ -1,7 +1,7 @@
 
 extends Area2D
 
-@export var speed: float = 300.0
+@export var speed: float = 200.0
 var game_over = false
 
 func _ready():
@@ -14,6 +14,10 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.name == "Player" and not game_over:
 		game_over = true
+		body.game_over = true
+		body.get_node("srce").visible = false
+		body.get_node("mrtvo srce").visible = true
+		
 
 		var poruka = get_tree().current_scene.find_child("MessageLabel", true, false)
 

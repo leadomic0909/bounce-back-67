@@ -18,16 +18,14 @@ func _on_body_entered(body):
 		disappearing = true
 		set_deferred("monitoring", false)
 		
-		body.set_physics_process(false)
-		body.set_process_input(false)
+		body.can_move = false
 		
 		var tween = create_tween()
-		tween.tween_property(self, "modulate:a", 0.0, 3.0)
+		tween.tween_property(self, "modulate:a", 0.0, 1.0)
 		
 		await tween.finished
 		
-		body.set_physics_process(true)
-		body.set_process_input(true)
+		body.can_move = true
 		
 		queue_free()
 
