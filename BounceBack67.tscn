@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://cip6yf2pyuc83"]
+
+[ext_resource type="Script" uid="uid://cg3oqeg4esjc4" path="res://parallax_background.gd" id="1_b8312"]
+[ext_resource type="Script" uid="uid://n4jjkxjemm" path="res://player.gd" id="1_f6wta"]
+[ext_resource type="Texture2D" uid="uid://bdc17ixgknhe5" path="res://Background1.png" id="1_v84gk"]
+[ext_resource type="Texture2D" uid="uid://xfm07y5f4m8o" path="res://Player-pravi.png" id="3_d3vrx"]
+[ext_resource type="Texture2D" uid="uid://cyienowca8bm2" path="res://prepreka.png" id="4_d3vrx"]
+[ext_resource type="Texture2D" uid="uid://cex5fq7vonq7c" path="res://67coin.png" id="5_tgtej"]
+[ext_resource type="Texture2D" uid="uid://dgl5dki3idvgq" path="res://oblak1.png" id="6_n0txk"]
+[ext_resource type="Texture2D" uid="uid://7argp4mn3avj" path="res://evil67.png" id="7_b8312"]
+[ext_resource type="Script" uid="uid://bjxmiqsaii113" path="res://oblak.gd" id="7_svhgf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dudcw"]
+radius = 186.44629
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cylj"]
+size = Vector2(1542.2642, 630.71704)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pv2l2"]
+radius = 193.62386
+
+[node name="Node2D" type="Node2D" unique_id=1078858180]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=23149043]
+script = ExtResource("1_b8312")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1052436988]
+motion_mirroring = Vector2(1144, 0)
+
+[node name="background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1349195889]
+position = Vector2(575, 324.00003)
+scale = Vector2(0.59979206, 0.59870243)
+texture = ExtResource("1_v84gk")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1327916709]
+script = ExtResource("1_f6wta")
+
+[node name="srce" type="Sprite2D" parent="Player" unique_id=234430544]
+position = Vector2(192.99997, 276.9875)
+scale = Vector2(0.274, 0.256)
+texture = ExtResource("3_d3vrx")
+
+[node name="pickupArea" type="CollisionPolygon2D" parent="Player" unique_id=737028043]
+position = Vector2(656.9662, 362.32916)
+scale = Vector2(0.7847532, 0.7361571)
+polygon = PackedVector2Array(-592, -153, -581, -165, -567, -173, -549, -175, -537, -170, -527, -161, -521, -149, -522, -142, -504, -151, -489, -167, -486, -174, -482, -157, -481, -150, -484, -145, -495, -139, -484, -140, -481, -142, -490, -134, -497, -129, -505, -125, -488, -124, -492, -118, -505, -114, -512, -116, -504, -112, -494, -112, -510, -104, -523, -104, -511, -97, -506, -96, -524, -91, -541, -97, -546, -102, -590, -55, -637, -102, -650, -93, -661, -91, -676, -96, -680, -98, -671, -98, -663, -101, -660, -104, -674, -105, -687, -110, -687, -111, -677, -112, -672, -116, -686, -115, -698, -126, -683, -124, -679, -125, -694, -133, -704, -142, -693, -138, -689, -140, -701, -146, -703, -153, -699, -174, -693, -166, -678, -150, -664, -143, -659, -142, -659, -154, -641, -170, -629, -174, -617, -173, -605, -168, -598, -162)
+
+[node name="prepreka1" type="Area2D" parent="." unique_id=1961751143]
+
+[node name="prepreka1" type="Sprite2D" parent="prepreka1" unique_id=2122072781]
+position = Vector2(731, 115)
+scale = Vector2(0.33599666, 0.33599663)
+texture = ExtResource("4_d3vrx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="prepreka1" unique_id=2000370067]
+position = Vector2(731, 115)
+scale = Vector2(0.33599666, 0.33599663)
+polygon = PackedVector2Array(29.762207, 0, -65.47681, -56.548187, 32.738525, -113.096375, -68.453125, -172.62077, 29.762207, -229.16895, -65.47681, -285.71713, 35.7146, -342.26532, 62.500732, -345.24155, 65.47681, 339.28906, 29.762207, 339.28906, -65.47681, 279.7647, 35.7146, 223.21649, -68.453125, 169.64453, 29.762207, 116.07257, -65.47681, 56.548187)
+
+[node name="coin67" type="Area2D" parent="." unique_id=1387061665]
+
+[node name="coin" type="Sprite2D" parent="coin67" unique_id=26272759]
+position = Vector2(562.00006, 198)
+scale = Vector2(0.16090426, 0.16090426)
+texture = ExtResource("5_tgtej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin67" unique_id=802038]
+position = Vector2(562, 198)
+scale = Vector2(0.16090426, 0.16090426)
+shape = SubResource("CircleShape2D_dudcw")
+
+[node name="oblak" type="Area2D" parent="." unique_id=973554697]
+script = ExtResource("7_svhgf")
+
+[node name="Sprite2D" type="Sprite2D" parent="oblak" unique_id=1412087420]
+position = Vector2(509, 82)
+scale = Vector2(0.21721312, 0.2172131)
+texture = ExtResource("6_n0txk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oblak" unique_id=940026929]
+position = Vector2(509.00006, 83)
+scale = Vector2(0.21721312, 0.2172131)
+shape = SubResource("RectangleShape2D_4cylj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=221863669]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1581131645]
+position = Vector2(1030, 295)
+scale = Vector2(0.1501305, 0.15013048)
+texture = ExtResource("7_b8312")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1402542791]
+position = Vector2(1030, 295)
+scale = Vector2(0.1501305, 0.15013048)
+shape = SubResource("CircleShape2D_pv2l2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=252889850]
+
+[node name="count67" type="Label" parent="CanvasLayer" unique_id=1506052109]
+offset_right = 72.0
+offset_bottom = 42.0
+
+[connection signal="body_entered" from="oblak" to="oblak" method="_on_body_entered"]
