@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bdc17ixgknhe5" path="res://Background1.png" id="1_v84gk"]
 [ext_resource type="Texture2D" uid="uid://xfm07y5f4m8o" path="res://Player-pravi.png" id="3_d3vrx"]
 [ext_resource type="Texture2D" uid="uid://cyienowca8bm2" path="res://prepreka.png" id="4_d3vrx"]
+[ext_resource type="Script" uid="uid://dk2ku4vvenyq8" path="res://prepreka_1.gd" id="5_svhgf"]
 [ext_resource type="Texture2D" uid="uid://cex5fq7vonq7c" path="res://67coin.png" id="5_tgtej"]
 [ext_resource type="Texture2D" uid="uid://dgl5dki3idvgq" path="res://oblak1.png" id="6_n0txk"]
 [ext_resource type="Texture2D" uid="uid://7argp4mn3avj" path="res://evil67.png" id="7_b8312"]
@@ -46,6 +47,7 @@ scale = Vector2(0.7847532, 0.7361571)
 polygon = PackedVector2Array(-592, -153, -581, -165, -567, -173, -549, -175, -537, -170, -527, -161, -521, -149, -522, -142, -504, -151, -489, -167, -486, -174, -482, -157, -481, -150, -484, -145, -495, -139, -484, -140, -481, -142, -490, -134, -497, -129, -505, -125, -488, -124, -492, -118, -505, -114, -512, -116, -504, -112, -494, -112, -510, -104, -523, -104, -511, -97, -506, -96, -524, -91, -541, -97, -546, -102, -590, -55, -637, -102, -650, -93, -661, -91, -676, -96, -680, -98, -671, -98, -663, -101, -660, -104, -674, -105, -687, -110, -687, -111, -677, -112, -672, -116, -686, -115, -698, -126, -683, -124, -679, -125, -694, -133, -704, -142, -693, -138, -689, -140, -701, -146, -703, -153, -699, -174, -693, -166, -678, -150, -664, -143, -659, -142, -659, -154, -641, -170, -629, -174, -617, -173, -605, -168, -598, -162)
 
 [node name="prepreka1" type="Area2D" parent="." unique_id=1961751143]
+script = ExtResource("5_svhgf")
 
 [node name="prepreka1" type="Sprite2D" parent="prepreka1" unique_id=2122072781]
 position = Vector2(731, 115)
@@ -80,6 +82,7 @@ texture = ExtResource("6_n0txk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oblak" unique_id=940026929]
 position = Vector2(509.00006, 83)
 scale = Vector2(0.21721312, 0.2172131)
+skew = -0.017453292
 shape = SubResource("RectangleShape2D_4cylj")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=221863669]
