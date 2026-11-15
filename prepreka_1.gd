@@ -2,7 +2,7 @@
 extends Area2D
 
 @export var speed: float = 180.0
->>>>>>> aa58ba08132fed1a22b05a1691715ff82c577f39
+
 var game_over = false
 
 func _ready():
