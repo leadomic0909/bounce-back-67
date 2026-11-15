@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://delpwsq2fkg2x"]
+
+[ext_resource type="Texture2D" uid="uid://nebdu14t3fjf" path="res://oblak2.png" id="1_vo1iy"]
+
+[node name="oblak2" type="Area2D" unique_id=1332552229]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=766496793]
+position = Vector2(1664.0001, 231.00002)
+scale = Vector2(0.59090906, 0.59090906)
+texture = ExtResource("1_vo1iy")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D" unique_id=724833809]
+polygon = PackedVector2Array(-125.23096, -45.69232, -165.84644, -20.307709, -159.07715, -3.0517578e-05, -159.07715, 18.615356, -209.84644, 38.923065, -187.84644, 54.15384, -128.61572, 55.84613, -60.92334, 72.769226, 54.153564, 67.69229, 147.23047, 54.15384, 191.23047, 27.076904, 235.23047, 15.230743, 211.53833, -5.076935, 165.84595, -11.846161, 103.23047, -22.00003, 67.69214, -42.30771, 49.07666, -60.923096, 27.07666, -60.923096, -23.692627, -71.076935, -69.384766, -69.38464)

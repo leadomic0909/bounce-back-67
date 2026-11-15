@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d1t5fihbn5tmv"]
+
+[ext_resource type="Script" uid="uid://cynw0xyho867b" path="res://coin_67,69.gd" id="1_dbhk5"]
+[ext_resource type="Texture2D" uid="uid://7argp4mn3avj" path="res://evil67.png" id="2_wppnu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pv2l2"]
+radius = 193.62386
+
+[node name="69" type="Area2D" unique_id=2012743329]
+script = ExtResource("1_dbhk5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=899732982]
+position = Vector2(1030, 295)
+scale = Vector2(0.1501305, 0.15013048)
+texture = ExtResource("2_wppnu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=103089769]
+position = Vector2(1030, 295)
+scale = Vector2(0.1501305, 0.15013048)
+shape = SubResource("CircleShape2D_pv2l2")

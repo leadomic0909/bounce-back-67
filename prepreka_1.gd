@@ -5,8 +5,10 @@ extends Area2D
 
 var game_over = false
 
-func _ready():
-	body_entered.connect(_on_body_entered)
+func _ready(): 
+	pass
+#body_entered.connect(_on_body_entered)
+
 
 func _process(delta):
 	if not game_over:

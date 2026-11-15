@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://cip6yf2pyuc83"]
+
+[ext_resource type="Script" uid="uid://bvrmuylqvgun2" path="res://bounce_back_67.gd" id="1_551f8"]
+[ext_resource type="Script" uid="uid://cg3oqeg4esjc4" path="res://parallax_background.gd" id="1_b8312"]
+[ext_resource type="Script" uid="uid://n4jjkxjemm" path="res://player.gd" id="1_f6wta"]
+[ext_resource type="Texture2D" uid="uid://bdc17ixgknhe5" path="res://Background1.png" id="1_v84gk"]
+[ext_resource type="Texture2D" uid="uid://xfm07y5f4m8o" path="res://Player-pravi.png" id="3_d3vrx"]
+[ext_resource type="Texture2D" uid="uid://cyienowca8bm2" path="res://prepreka.png" id="4_d3vrx"]
+[ext_resource type="Script" uid="uid://dk2ku4vvenyq8" path="res://prepreka_1.gd" id="5_svhgf"]
+[ext_resource type="Texture2D" uid="uid://cti12jc0ygmyk" path="res://Player-mrtvi.png" id="7_32qau"]
+[ext_resource type="Script" uid="uid://cynw0xyho867b" path="res://coin_67,69.gd" id="7_551f8"]
+[ext_resource type="Texture2D" uid="uid://7argp4mn3avj" path="res://evil67.png" id="7_b8312"]
+[ext_resource type="PackedScene" uid="uid://bf8qk47yk2f8k" path="res://coin.tscn" id="10_0i75u"]
+[ext_resource type="PackedScene" uid="uid://wm2e8vne186c" path="res://oblak.tscn" id="10_32qau"]
+[ext_resource type="PackedScene" uid="uid://delpwsq2fkg2x" path="res://oblak_2.tscn" id="13_i64ua"]
+[ext_resource type="Script" uid="uid://bknjmbttoj23m" path="res://oblak_2.gd" id="14_j21w0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pv2l2"]
+radius = 193.62386
+
+[node name="Node2D" type="Node2D" unique_id=1078858180]
+script = ExtResource("1_551f8")
+oblak_scene = ExtResource("10_32qau")
+coin_scene = ExtResource("10_0i75u")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=23149043]
+script = ExtResource("1_b8312")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1052436988]
+motion_mirroring = Vector2(1144, 0)
+
+[node name="background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1349195889]
+position = Vector2(575, 324.00003)
+scale = Vector2(0.59979206, 0.59870243)
+texture = ExtResource("1_v84gk")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1327916709]
+script = ExtResource("1_f6wta")
+dead_texture = ExtResource("7_32qau")
+
+[node name="srce" type="Sprite2D" parent="Player" unique_id=234430544]
+position = Vector2(192.99997, 276.9875)
+scale = Vector2(0.274, 0.256)
+texture = ExtResource("3_d3vrx")
+
+[node name="pickupArea" type="CollisionPolygon2D" parent="Player" unique_id=737028043]
+position = Vector2(656.9662, 362.32916)
+scale = Vector2(0.7847532, 0.7361571)
+polygon = PackedVector2Array(-592, -153, -581, -165, -567, -173, -549, -175, -537, -170, -527, -161, -521, -149, -522, -142, -522.4142, -136.28772, -527.51135, -122.70364, -535.15704, -113.194824, -546, -102, -589.95135, -56.141785, -637.0999, -102.327576, -646.01996, -113.194824, -656.21423, -126.77887, -660.0371, -140.36292, -657.4885, -153.94699, -651.11707, -163.45581, -641, -170, -629, -174, -617, -173, -605, -168, -598, -162)
+
+[node name="mrtvo srce" type="Sprite2D" parent="Player" unique_id=371296221]
+visible = false
+position = Vector2(193, 276.987)
+scale = Vector2(0.274, 0.256)
+texture = ExtResource("7_32qau")
+
+[node name="prepreka1" type="Area2D" parent="." unique_id=1961751143]
+z_index = 2
+script = ExtResource("5_svhgf")
+
+[node name="prepreka1" type="Sprite2D" parent="prepreka1" unique_id=2122072781]
+position = Vector2(731, 115)
+scale = Vector2(0.33599666, 0.33599663)
+texture = ExtResource("4_d3vrx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="prepreka1" unique_id=2000370067]
+position = Vector2(731, 115)
+scale = Vector2(0.33599666, 0.33599663)
+polygon = PackedVector2Array(29.762207, 0, -65.47681, -56.548187, 32.738525, -113.096375, -68.453125, -172.62077, 29.762207, -229.16895, -65.47681, -285.71713, 35.7146, -342.26532, 62.500732, -345.24155, 65.47681, 339.28906, 29.762207, 339.28906, -65.47681, 279.7647, 35.7146, 223.21649, -68.453125, 169.64453, 29.762207, 116.07257, -65.47681, 56.548187)
+
+[node name="coin67" parent="." unique_id=1726355747 instance=ExtResource("10_0i75u")]
+
+[node name="oblak" parent="." unique_id=1448474349 instance=ExtResource("10_32qau")]
+
+[node name="69" type="Area2D" parent="." unique_id=221863669]
+script = ExtResource("7_551f8")
+
+[node name="Sprite2D" type="Sprite2D" parent="69" unique_id=1581131645]
+position = Vector2(1030, 295)
+scale = Vector2(0.1501305, 0.15013048)
+texture = ExtResource("7_b8312")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="69" unique_id=1402542791]
+position = Vector2(1030, 295)
+scale = Vector2(0.1501305, 0.15013048)
+shape = SubResource("CircleShape2D_pv2l2")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=252889850]
+
+[node name="Count" type="Label" parent="UI" unique_id=1506052109]
+offset_right = 72.0
+offset_bottom = 42.0
+
+[node name="OblakTimer" type="Timer" parent="." unique_id=173924474]
+wait_time = 7.276000000000001
+autostart = true
+
+[node name="CoinTimer" type="Timer" parent="." unique_id=1063885563]
+wait_time = 2.5
+autostart = true
+
+[node name="oblakb" parent="." unique_id=1332552229 instance=ExtResource("13_i64ua")]
+script = ExtResource("14_j21w0")
+
+[node name="Oblak2Timer" type="Timer" parent="." unique_id=113442535]
+wait_time = 8.091999999999999
+autostart = true
+
+[connection signal="body_entered" from="prepreka1" to="prepreka1" method="_on_body_entered"]
+[connection signal="timeout" from="OblakTimer" to="." method="_on_oblak_timer_timeout"]
+[connection signal="timeout" from="CoinTimer" to="." method="_on_coin_timer_timeout"]

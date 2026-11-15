@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://djrjt23hjwcwc"]
+
+[ext_resource type="Script" uid="uid://dk2ku4vvenyq8" path="res://prepreka_1.gd" id="1_avvrs"]
+[ext_resource type="Texture2D" uid="uid://cyienowca8bm2" path="res://prepreka.png" id="2_yys2s"]
+
+[node name="prepreka1" type="Area2D" unique_id=587180388]
+z_index = 2
+script = ExtResource("1_avvrs")
+
+[node name="prepreka1" type="Sprite2D" parent="." unique_id=314300188]
+position = Vector2(731, 115)
+scale = Vector2(0.33599666, 0.33599663)
+texture = ExtResource("2_yys2s")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=596254263]
+position = Vector2(731, 115)
+scale = Vector2(0.33599666, 0.33599663)
+polygon = PackedVector2Array(29.762207, 0, -65.47681, -56.548187, 32.738525, -113.096375, -68.453125, -172.62077, 29.762207, -229.16895, -65.47681, -285.71713, 35.7146, -342.26532, 62.500732, -345.24155, 65.47681, 339.28906, 29.762207, 339.28906, -65.47681, 279.7647, 35.7146, 223.21649, -68.453125, 169.64453, 29.762207, 116.07257, -65.47681, 56.548187)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
