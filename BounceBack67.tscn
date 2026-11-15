@@ -103,4 +103,6 @@ shape = SubResource("CircleShape2D_pv2l2")
 offset_right = 72.0
 offset_bottom = 42.0
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1061150539]
+
 [connection signal="body_entered" from="oblak" to="oblak" method="_on_body_entered"]
