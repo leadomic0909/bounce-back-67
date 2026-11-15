@@ -1,5 +1,11 @@
 extends CharacterBody2D
 
+var game_over = false
+@onready var sprite = $"mrtvo srce"
+@export var dead_texture: Texture2D
+
+var can_move = true
+
 var slow_active = false
 
 func slow_down():
@@ -11,7 +17,8 @@ func slow_down():
 	
 	await get_tree().create_timer(3.0, true, false, true).timeout
 	
-	Engine.time_scale = 2.0
+	if not game_over:
+		Engine.time_scale = 2.0
 	print("Normalna brzina vraćena")
 	slow_active = false
 	
@@ -26,6 +33,11 @@ func slow_down():
 # Called when the node enters the scene tree for the first time.
 @warning_ignore("unused_parameter")
 func _physics_process(delta):
+	if not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 	var direction = Input.get_axis( "ui_up", "ui_down")
 	velocity = Vector2 (0, direction * 400)
 	move_and_slide()# Replace with function body.
